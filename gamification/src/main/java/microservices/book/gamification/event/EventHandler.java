@@ -2,6 +2,9 @@ package microservices.book.gamification.event;
 
 import lombok.extern.slf4j.Slf4j;
 import microservices.book.gamification.service.GameService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.AmqpRejectAndDontRequeueException;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -13,7 +16,8 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 class EventHandler {
-
+	private Logger log = LoggerFactory.getLogger(this.getClass());
+	   
     private GameService gameService;
 
     EventHandler(final GameService gameService) {

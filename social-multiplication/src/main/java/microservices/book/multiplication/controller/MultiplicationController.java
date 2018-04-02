@@ -3,6 +3,9 @@ package microservices.book.multiplication.controller;
 import lombok.extern.slf4j.Slf4j;
 import microservices.book.multiplication.domain.Multiplication;
 import microservices.book.multiplication.service.MultiplicationService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/multiplications")
 final class MultiplicationController {
 
+	private Logger log = LoggerFactory.getLogger(this.getClass());
+	
     private final MultiplicationService multiplicationService;
 
     private final int serverPort;

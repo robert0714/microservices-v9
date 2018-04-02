@@ -33,4 +33,15 @@ These are the instructions:
 
 ## Do you want to know more?
 
-If you want more details about the different application parts and how to get there from scratch, you can buy the book on [Apress](http://www.apress.com/book/9781484231647) or [Amazon](http://amzn.to/2FSB2ME).
+If you want more details about the different application parts and how to get there from scratch, you can buy the book on [Apress](http://www.apress.com/book/9781484231647) or [Amazon](http://amzn.to/2FSB2ME)
+
+
+# Docker
+docker run -d --hostname my-rabbit --name some-rabbit -p 15671:15671 -p 15672:15672  -p 25672:25672   -p 4369:4369  -p 5671:5671 -p 5672:5672   rabbitmq:3-management
+<br/>
+default user,password ( guest guest  )
+
+頁面是管理頁面(15672頁面是不錯的選擇)
+不然用他的CLI指令，搭配Python下指令
+https://www.rabbitmq.com/management-cli.html
+python.exe rabbitmqadmin..

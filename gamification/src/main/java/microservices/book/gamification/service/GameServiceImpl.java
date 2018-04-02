@@ -6,6 +6,9 @@ import microservices.book.gamification.client.dto.MultiplicationResultAttempt;
 import microservices.book.gamification.domain.*;
 import microservices.book.gamification.repository.BadgeCardRepository;
 import microservices.book.gamification.repository.ScoreCardRepository;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,7 +23,8 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 class GameServiceImpl implements GameService {
-
+	private Logger log = LoggerFactory.getLogger(this.getClass());
+	   
     public static final int LUCKY_NUMBER = 42;
 
     private ScoreCardRepository scoreCardRepository;
